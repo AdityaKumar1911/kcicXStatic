@@ -17,7 +17,7 @@ export default function AcademicsMegaMenu({ onClose }: Props) {
 
   const menuItems = [
     { to: '/programs', label: 'Programs', description: 'Browse all courses', icon: GraduationCap },
-    { to: '/programs#featured', label: 'Featured Programs', description: 'Exclusive at KCIC', icon: Star },
+    { to: '/programs/beng-hons-motorsport-engineering', label: 'Featured Programs', description: 'Exclusive at KCIC', icon: Star },
     { to: '/universities', label: 'Partner Universities', description: 'Partner institutions', icon: Building },
   ];
 
