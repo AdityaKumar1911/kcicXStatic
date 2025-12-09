@@ -1,0 +1,24 @@
+{
+  "name": "KCIC Pathway College",
+  "short_name": "KCIC",
+  "description": "Study in India, Graduate Globally - Affordable pathway programs to top universities",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1B3A",
+  "theme_color": "#0B1B3A",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/placeholder.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/placeholder.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

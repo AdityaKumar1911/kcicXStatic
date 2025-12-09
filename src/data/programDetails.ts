@@ -1,0 +1,58 @@
+export const programDetails: Record<string, any> = {
+  psychology: {
+    title: 'BSc (Hons) Psychology',
+    subtitle: 'Explore the human mind and behavior with cutting-edge research',
+    tag: 'High Demand Program',
+    duration: '3 years | 1 year in India & 2 years in the UK',
+    startDate: 'September 2025',
+    heroImage: 'https://d64gsuwffb70l.cloudfront.net/68ee314aa177c7fe5f473f1b_1736793697699_f8e9c2a7.webp',
+    modules: [
+      { title: 'Cognitive Psychology', desc: 'Study memory, perception, and decision-making processes' },
+      { title: 'Developmental Psychology', desc: 'Understand human growth from infancy to old age' },
+      { title: 'Clinical Psychology', desc: 'Learn assessment and treatment of mental health disorders' },
+      { title: 'Research Methods', desc: 'Master experimental design and statistical analysis' },
+      { title: 'Neuropsychology', desc: 'Explore brain-behavior relationships and neural mechanisms' },
+      { title: 'Social Psychology', desc: 'Examine how people influence and relate to one another' },
+    ],
+    careers: [
+      { title: 'Clinical Psychologist', salary: '£35,000 - £65,000', companies: 'NHS, Private Clinics, Hospitals' },
+      { title: 'Educational Psychologist', salary: '£38,000 - £60,000', companies: 'Schools, Local Authorities' },
+      { title: 'Research Psychologist', salary: '£32,000 - £55,000', companies: 'Universities, Research Institutes' },
+      { title: 'Occupational Psychologist', salary: '£40,000 - £70,000', companies: 'Corporations, HR Consultancies' },
+    ],
+    requirements: ['A-Levels: BBB including Biology or Psychology', 'IELTS: 6.0 overall', 'Strong interest in human behavior'],
+    whyKCIC: ['BPS accredited program', 'Research opportunities', 'Clinical placements', 'Expert faculty'],
+    faqs: [
+      { q: 'Is this program BPS accredited?', a: 'Yes, our BSc Psychology is accredited by the British Psychological Society.' },
+      { q: 'Can I become a clinical psychologist?', a: 'This degree is the first step. You\'ll need further postgraduate training.' },
+    ],
+  },
+  aerospace: {
+    title: 'BEng (Hons) Aerospace Engineering',
+    subtitle: 'Design the future of flight and space exploration',
+    tag: 'High Demand Program',
+    duration: '4 years | 2 years in India & 2 years in the UK',
+    startDate: 'September 2025',
+    heroImage: 'https://d64gsuwffb70l.cloudfront.net/68ee314aa177c7fe5f473f1b_1736793697700_6c4a1e3f.webp',
+    modules: [
+      { title: 'Flight Mechanics', desc: 'Master aircraft stability, control, and performance' },
+      { title: 'Propulsion Systems', desc: 'Study jet engines, rockets, and advanced propulsion' },
+      { title: 'Aerodynamics', desc: 'Learn fluid dynamics and computational analysis' },
+      { title: 'Structures & Materials', desc: 'Explore composite materials and structural design' },
+      { title: 'Avionics', desc: 'Understand aircraft electronics and control systems' },
+      { title: 'Space Systems', desc: 'Design satellites and spacecraft systems' },
+    ],
+    careers: [
+      { title: 'Aerospace Engineer', salary: '£35,000 - £65,000', companies: 'Airbus, Boeing, BAE Systems' },
+      { title: 'Propulsion Engineer', salary: '£38,000 - £70,000', companies: 'Rolls-Royce, GE Aviation' },
+      { title: 'Flight Test Engineer', salary: '£40,000 - £75,000', companies: 'NASA, ESA, SpaceX' },
+      { title: 'Systems Engineer', salary: '£42,000 - £72,000', companies: 'Lockheed Martin, Northrop Grumman' },
+    ],
+    requirements: ['A-Levels: AAB including Maths and Physics', 'IELTS: 6.5 overall', 'Strong mathematical skills'],
+    whyKCIC: ['Industry partnerships', 'Flight simulator access', 'Research projects', 'Expert mentorship'],
+    faqs: [
+      { q: 'Do I need flying experience?', a: 'No, flying experience is not required for this engineering program.' },
+      { q: 'What career paths are available?', a: 'Aircraft design, space systems, defense, and aviation industries.' },
+    ],
+  },
+};
