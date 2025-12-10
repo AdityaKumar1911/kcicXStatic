@@ -184,106 +184,60 @@ export default function ProgramDetail() {
       <Navigation />
       
       {/* Hero Section */}
-      <div className="relative h-[400px] overflow-hidden">
-        <img 
-          src={HERO_IMAGE} 
-          alt={program.title}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1B3A]/85 to-[#0B1B3A]/70 flex items-center">
-          <div className="container mx-auto px-6 max-w-7xl">
-            <div className="grid lg:grid-cols-12 gap-8 items-center">
-              {/* Left Side - Existing Content */}
-              <div className="lg:col-span-8">
-                <Button 
-                  variant="ghost" 
-                  onClick={() => navigate(-1)}
-                  className="mb-4 text-white hover:bg-white/20"
-                >
-                  <ArrowLeft className="mr-2 h-4 w-4" /> Back
-                </Button>
-                <Badge className="bg-[#B99750]/20 text-[#B99750] border-[#B99750] mb-4">
-                  {program.department}
-                </Badge>
-                <h1 className="text-5xl font-bold text-white mb-4">{program.title}</h1>
-                <a href="/contact">
-                  <Button className="bg-[#B99750] hover:bg-[#a88645] text-white">
-                    Enquire Now <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </a>
+         <div className="relative h-[400px] overflow-hidden">
+  <img
+    src={HERO_IMAGE}
+    alt={program.title}
+    className="w-full h-full object-cover"
+  />
+  <div className="absolute inset-0 bg-gradient-to-r from-[#0B1B3A]/85 to-[#0B1B3A]/70 flex items-center">
+    <div className="container mx-auto px-6 max-w-7xl flex justify-between items-center">
+      {/* Left side content */}
+      <div>
+        <Button
+          variant="ghost"
+          onClick={() => router.back()}
+          className="mb-4 text-white hover:bg-white/20"
+        >
+          <ArrowLeft className="mr-2 h-4 w-4" /> Back
+        </Button>
+        <Badge className="bg-[#B99750]/20 text-[#B99750] border-[#B99750] mb-4">
+          {program.department}
+        </Badge>
+        <h1 className="text-5xl font-bold text-white mb-4">{program.title}</h1>
+        <p className="text-xl text-white/90 mb-4">{program.discipline}</p>
+        <Link href="/contact">
+          <Button className="bg-[#B99750] hover:bg-[#a88645] text-white">
+            Enquire Now <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+        </Link>
+      </div>
 
-
-              </div>
-
-              {/* Right Side - AI Counsellor Circle (Hidden on mobile/tablet) */}
-              <div className="hidden mt-12 lg:flex lg:col-span-4 justify-center items-center">
-                <div 
-                  className="relative group cursor-pointer"
-                  onMouseEnter={() => setIsAiHovered(true)}
-                  onMouseLeave={() => setIsAiHovered(false)}
-                >
-                  {/* Outer Glow Ring */}
-                  <div className={`absolute inset-0 rounded-full bg-gradient-to-r from-[#B99750] to-[#d4af37] opacity-30 blur-xl transition-all duration-500 ${
-                    isAiHovered ? 'scale-110 opacity-50' : 'scale-100'
-                  }`}></div>
-                  
-                  {/* Main Circle */}
-                  {/* Main Circle - Reduced from w-80 h-80 to w-60 h-60 */}
-                  <div className={`relative w-60 h-60 rounded-full overflow-hidden border-4 border-[#B99750] shadow-2xl transition-all duration-500 ${
-                    isAiHovered ? 'scale-105 border-[#d4af37]' : 'scale-100'
-                  }`}>
-
-                    <img 
-                      src={AI_COUNSELLOR_IMAGE} 
-                      alt="AI Counsellor"
-                      className="w-full h-full object-cover"
-                    />
-                    
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B3A]/80 via-transparent to-transparent"></div>
-                    
-                    {/* Text & Buttons Overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
-                      <h3 className="text-white font-bold text-xl mb-2">AI Counsellor</h3>
-                      <p className="text-white/80 text-sm mb-4">Get instant course guidance</p>
-                      
-                      {/* Interactive Buttons */}
-                      <div className="flex gap-3 justify-center">
-                        <button
-                          onClick={() => toast({
-                            title: "Chat Coming Soon!",
-                            description: "AI chat counselling will be available soon.",
-                          })}
-                          className="flex items-center gap-2 px-4 py-2 bg-[#B99750] hover:bg-[#d4af37] text-white rounded-full transition-all duration-300 hover:scale-105 shadow-lg"
-                        >
-                          <MessageCircle className="h-4 w-4" />
-                          <span className="text-sm font-medium">Chat</span>
-                        </button>
-                        <button
-                          onClick={() => toast({
-                            title: "Voice Coming Soon!",
-                            description: "AI voice counselling will be available soon.",
-                          })}
-                          className="flex items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-full transition-all duration-300 hover:scale-105 shadow-lg backdrop-blur-sm"
-                        >
-                          <Mic className="h-4 w-4" />
-                          <span className="text-sm font-medium">Voice</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Pulse Animation */}
-                  <div className={`absolute inset-0 rounded-full border-2 border-[#B99750] transition-all duration-1000 ${
-                    isAiHovered ? 'scale-110 opacity-0' : 'scale-100 opacity-100'
-                  }`} style={{ animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite' }}></div>
-                </div>
-              </div>
-            </div>
+      {/* ✅ Right side AI Assistant with hover effect */}
+      <div className="flex flex-col items-center space-y-3 mt-20">
+        <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-[#B99750] shadow-lg transform transition-transform duration-500 hover:scale-110 hover:shadow-[0_0_25px_rgba(185,151,80,0.6)]">
+          <img
+            src="https://d64gsuwffb70l.cloudfront.net/68ee314aa177c7fe5f473f1b_1761210298751_56849471.webp"
+            alt="AI Counselor"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="text-center text-white">
+          <h3 className="text-lg font-semibold">AI Counselor</h3>
+          <p className="text-sm text-white/80 mb-2">Get instant course guidance</p>
+          <div className="flex gap-3 justify-center">
+            <Button className="bg-[#B99750] hover:bg-[#a88645] text-white text-sm px-4 py-2 rounded-full">
+              💬 Chat
+            </Button>
+            <Button className="bg-[#B99750] hover:bg-[#a88645] text-white text-sm px-4 py-2 rounded-full">
+              🎤 Voice
+            </Button>
           </div>
         </div>
       </div>
-
+    </div>
+  </div>
+</div>
 
       <div className="py-12 sm:py-16 lg:py-20">
 
