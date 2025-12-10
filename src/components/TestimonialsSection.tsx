@@ -24,10 +24,36 @@ export default function TestimonialsSection({ testimonials = defaultTestimonials
             <span className="text-[#FAF3E0] font-semibold text-xs sm:text-sm">STUDENT SUCCESS STORIES</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#FAF3E0] mb-4">Hear From Our Students</h2>
-          <p className="text-[#FAF3E0]/90 text-base sm:text-lg max-w-3xl mx-auto">Real stories from students who successfully transferred to top universities worldwide</p>
+          <p className="text-[#FAF3E0]/90 text-base sm:text-lg max-w-3xl mx-auto">
+            Real stories from students who successfully transferred to top universities worldwide
+          </p>
         </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        {/* 📱 Mobile Horizontal Scroll */}
+        <div className="flex gap-6 overflow-x-auto md:hidden pb-4 snap-x snap-mandatory">
+          {testimonials.map(t => (
+            <div key={t.id} className="min-w-[260px] snap-center">
+              <Card className="border-2 border-[#B99750]/20 hover:border-[#B99750] transition-all">
+                <CardContent className="p-5">
+                  <div className="flex justify-center mb-3">
+                    <img src={t.image} alt={t.name} className="w-20 h-20 rounded-full object-cover border-4 border-[#B99750]" />
+                  </div>
+                  <div className="text-center mb-4 pb-4 border-b border-gray-200">
+                    <h4 className="font-bold text-[#0B1B3A] text-lg mb-1">{t.name}</h4>
+                    <p className="text-sm text-[#B99750] font-semibold mb-1">{t.year}</p>
+                    <p className="text-sm text-gray-700 font-medium">{t.transferred_to}</p>
+                    <p className="text-xs text-gray-500">{t.country}</p>
+                  </div>
+                  <p className="text-sm font-semibold text-[#0B1B3A] mb-3">{t.program}</p>
+                  <p className="text-gray-600 text-sm italic">"{t.quote}"</p>
+                </CardContent>
+              </Card>
+            </div>
+          ))}
+        </div>
+
+        {/* 💻 Desktop Grid */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {testimonials.map(t => (
             <Card key={t.id} className="border-2 border-[#B99750]/20 hover:border-[#B99750] transition-all">
               <CardContent className="p-5">
@@ -46,6 +72,7 @@ export default function TestimonialsSection({ testimonials = defaultTestimonials
             </Card>
           ))}
         </div>
+
       </div>
     </section>
   );

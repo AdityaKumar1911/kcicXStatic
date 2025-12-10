@@ -9,7 +9,7 @@ export default function ManifestoSection() {
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[url('https://d64gsuwffb70l.cloudfront.net/68ee314aa177c7fe5f473f1b_1762151083028_4c4d4629.webp')] bg-cover bg-center"></div>
       </div>
-      
+
       <Layout className="relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">Our Manifesto</h2>
@@ -19,22 +19,41 @@ export default function ManifestoSection() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12">
-          {[
-            { icon: Globe, title: "Global Vision", text: "Education without borders" },
-            { icon: Users, title: "Student First", text: "Your success is our mission" },
-            { icon: Lightbulb, title: "Innovation", text: "Pioneering new pathways" },
-            { icon: BookOpen, title: "Excellence", text: "World-class standards" }
-          ].map((item, idx) => (
-            <div key={idx} className="bg-white/10 backdrop-blur-sm p-5 sm:p-6 rounded-lg border border-[#B99750]/30 hover:bg-white/20 transition-all">
-              <item.icon className="h-8 w-8 sm:h-10 sm:w-10 mb-4 text-[#B99750]" />
-              <h3 className="text-base sm:text-lg font-semibold mb-2">{item.title}</h3>
-              <p className="text-sm text-[#B99750]/80">{item.text}</p>
-            </div>
-          ))}
+        {/* -------- Horizontal Scroll on Mobile -------- */}
+        <div className="overflow-x-auto sm:overflow-visible -mx-4 px-4">
+          <div className="
+            flex sm:grid sm:grid-cols-2 lg:grid-cols-4 
+            gap-4 sm:gap-6 
+            snap-x snap-mandatory sm:snap-none 
+            overflow-x-auto sm:overflow-visible
+            pb-4
+          ">
+            {[
+              { icon: Globe, title: "Global Vision", text: "Education without borders" },
+              { icon: Users, title: "Student First", text: "Your success is our mission" },
+              { icon: Lightbulb, title: "Innovation", text: "Pioneering new pathways" },
+              { icon: BookOpen, title: "Excellence", text: "World-class standards" }
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className="
+                  snap-center min-w-[240px] sm:min-w-0
+                  bg-white/10 backdrop-blur-sm 
+                  p-5 sm:p-6 rounded-lg 
+                  border border-[#B99750]/30 
+                  hover:bg-white/20 
+                  transition-all
+                "
+              >
+                <item.icon className="h-8 w-8 sm:h-10 sm:w-10 mb-4 text-[#B99750]" />
+                <h3 className="text-base sm:text-lg font-semibold mb-2">{item.title}</h3>
+                <p className="text-sm text-[#B99750]/80">{item.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="text-center">
+        <div className="text-center mt-8">
           <Link to="/manifesto">
             <Button size="lg" variant="secondary" className="group">
               Read Our Philosophy

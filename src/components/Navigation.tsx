@@ -56,7 +56,7 @@ export default function Navigation() {
 
 
   return (
-<nav className="fixed top-0 w-full z-50 bg-[#0B1B3A]/95 border-b border-[#B99750]/20">
+    <nav className="fixed top-0 w-full z-50 bg-[#0B1B3A]/95 border-b border-[#B99750]/20">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
@@ -70,13 +70,13 @@ export default function Navigation() {
           <div className="hidden lg:flex items-center gap-4 xl:gap-6" ref={dropdownRef}>
             {/* Academics Dropdown - Click to toggle */}
             <div className="relative">
-              <button 
+              <button
                 onClick={() => toggleDropdown('academics')}
                 className={`text-[#FAF3E0] hover:text-[#B99750] font-medium transition-colors flex items-center gap-1 py-2 px-3 rounded-lg text-sm xl:text-base ${activeDropdown === 'academics' ? 'bg-[#B99750]/10 text-[#B99750]' : ''}`}
                 aria-expanded={activeDropdown === 'academics'}
                 aria-haspopup="true"
               >
-                Academics 
+                Academics
                 <ChevronDown className={`w-4 h-4 transition-transform flex-shrink-0 ${activeDropdown === 'academics' ? 'rotate-180' : ''}`} />
               </button>
               {activeDropdown === 'academics' && <AcademicsMegaMenu onClose={() => setActiveDropdown(null)} />}
@@ -84,13 +84,13 @@ export default function Navigation() {
 
             {/* Resources Dropdown - Click to toggle */}
             <div className="relative">
-              <button 
+              <button
                 onClick={() => toggleDropdown('resources')}
                 className={`text-[#FAF3E0] hover:text-[#B99750] font-medium transition-colors flex items-center gap-1 py-2 px-3 rounded-lg text-sm xl:text-base ${activeDropdown === 'resources' ? 'bg-[#B99750]/10 text-[#B99750]' : ''}`}
                 aria-expanded={activeDropdown === 'resources'}
                 aria-haspopup="true"
               >
-                Resources 
+                Resources
                 <ChevronDown className={`w-4 h-4 transition-transform flex-shrink-0 ${activeDropdown === 'resources' ? 'rotate-180' : ''}`} />
               </button>
               {activeDropdown === 'resources' && (
@@ -99,7 +99,7 @@ export default function Navigation() {
                     <span className="text-[#B99750] text-xs font-semibold uppercase tracking-wider">Resources</span>
                   </div>
                   {resourcesItems.map((item) => (
-                    <Link 
+                    <Link
                       key={item.to}
                       to={item.to}
                       onClick={() => setActiveDropdown(null)}
@@ -140,7 +140,7 @@ export default function Navigation() {
         <div className="lg:hidden fixed inset-0 top-16 md:top-20 z-40 bg-[#0B1B3A] overflow-y-auto">
           <div className="px-4 py-6 space-y-2">
             <MobileAcademicsMegaMenu onClose={closeMenu} />
-            
+
             {/* Mobile Resources */}
             <div>
               <button onClick={() => toggleSubmenu('resources')} className="w-full flex justify-between items-center text-[#FAF3E0] font-medium py-3 px-4 hover:bg-white/5 rounded-lg">
@@ -166,7 +166,7 @@ export default function Navigation() {
             </div>
 
             <Link to="/campuses" onClick={closeMenu} className="block text-[#FAF3E0] font-medium py-3 px-4 hover:bg-white/5 rounded-lg">Life at KCIC</Link>
-            
+
             <Link to="/virtual-tour" onClick={closeMenu} className="flex items-center gap-2 text-[#FAF3E0] font-medium py-3 px-4 hover:bg-white/5 rounded-lg">
               <Video className="w-5 h-5 text-[#B99750]" /> Virtual Tour
             </Link>
