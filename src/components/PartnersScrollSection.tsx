@@ -25,13 +25,8 @@ const partners = [{
 }, {
   name: 'Weltec Whitireia',
   logo: '/images/Universities logo/Whiteria black and white.png'
-}, {
-//   name: 'Sheffield Hallam',
-//   logo: '/images/Universities logo/university-logo_white.png'
-// }, {
-  name: 'Oxford Brookes',
-  logo: '/images/Universities logo/Colour.png'
-}, {
+}, 
+ {
   name: 'Elmhurst University',
   logo: '/images/Universities logo/elmhurst-logo.png'
 }, {

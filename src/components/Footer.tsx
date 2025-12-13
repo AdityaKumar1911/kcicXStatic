@@ -12,16 +12,22 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-primary text-[#FAF3E0] py-6" role="contentinfo">
       <Layout>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+        <div className="grid grid-cols-[40%_60%] gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
+
           {/* Brand Column */}
-          <div>
+          <div className="col-span-2 sm:col-span-1">
             <div className="flex items-center space-x-2 mb-2">
               <div className="w-7 h-7 bg-gradient-accent rounded-lg flex items-center justify-center">
                 <GraduationCap className="w-4 h-4 text-white" aria-hidden="true" />
               </div>
               <span className="text-sm font-bold leading-none">KCIC Pathway</span>
             </div>
-            <p className="text-[#FAF3E0]/80 text-xs leading-tight mb-3">Your gateway to affordable UK education.</p>
+
+            <p className="text-[#FAF3E0]/80 text-xs leading-tight mb-3">
+              Your gateway to affordable UK education.
+            </p>
+
             <div className="flex space-x-1.5" role="list" aria-label="Social media links">
               {[
                 { href: "https://facebook.com", icon: Facebook, label: "Facebook" },
@@ -29,9 +35,14 @@ export default function Footer() {
                 { href: "https://instagram.com", icon: Instagram, label: "Instagram" },
                 { href: "https://linkedin.com", icon: Linkedin, label: "LinkedIn" }
               ].map(({ href, icon: Icon, label }) => (
-                <a key={label} href={href} target="_blank" rel="noopener noreferrer"
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-6 h-6 bg-[#FAF3E0]/10 hover:bg-[#B99750] rounded-full flex items-center justify-center transition-colors"
-                  aria-label={`Visit our ${label} page`}>
+                  aria-label={`Visit our ${label} page`}
+                >
                   <Icon className="w-3 h-3" aria-hidden="true" />
                 </a>
               ))}
@@ -68,19 +79,30 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Resources & Newsletter */}
+          {/* Resources */}
           <div>
             <h3 className={headerClass}>Resources</h3>
-            <nav aria-label="Footer navigation - Resources" className="mb-3">
+            <nav aria-label="Footer navigation - Resources">
               <ul className="text-xs space-y-0.5">
                 <li><Link to="/parents-student-hub" className={linkClass}>Parents</Link></li>
                 <li><Link to="/students" className={linkClass}>Students</Link></li>
                 <li><Link to="/tutors" className={linkClass}>Tutors</Link></li>
-                <li><Link to="/contact" className={linkClass}>Contact Us</Link></li>
               </ul>
             </nav>
+          </div>
 
-            <div className="pt-2 border-t border-[#FAF3E0]/10">
+          {/* Contact Us */}
+          <div>
+            <h3 className={headerClass}>Contact Us</h3>
+            <nav aria-label="Footer navigation - Contact">
+              {/* <ul className="text-xs space-y-0.5">
+                <li><Link to="/contact" className={linkClass}>Contact Form</Link></li>
+                <li><Link to="/campuses" className={linkClass}>Visit Campus</Link></li>
+                <li><Link to="/universities" className={linkClass}>Partner Universities</Link></li>
+              </ul> */}
+            </nav>
+
+            <div className="pt-2 border-t border-[#FAF3E0]/10 mt-2">
               <p className="text-[10px] text-[#FAF3E0]/60 mb-1">Stay updated with latest news</p>
               <NewsletterForm source="footer" variant="compact" />
             </div>
@@ -89,7 +111,9 @@ export default function Footer() {
 
         <div className="border-t border-[#FAF3E0]/10 pt-3">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
-            <p className="text-xs text-[#FAF3E0]/80 leading-none">&copy; {currentYear} KCIC Pathway College. All rights reserved.</p>
+            <p className="text-xs text-[#FAF3E0]/80 leading-none">
+              &copy; {currentYear} KCIC Pathway College. All rights reserved.
+            </p>
             <SupabaseStatus />
           </div>
         </div>

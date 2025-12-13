@@ -68,7 +68,7 @@ export default function ProgramCard({
             <MapPin className="w-4 h-4 text-[#0B1B3A] flex-shrink-0 mt-0.5" />
             <div className="text-xs sm:text-sm">
               <span className="font-semibold text-gray-700">Study abroad:</span>
-              <span className="text-gray-600"> {getAbroadYears(pathwayModel)} or 2 Yrs</span>
+              <span className="text-gray-600"> {getAbroadYears(pathwayModel)} to 1 Yrs</span>
             </div>
           </div>
           <div className="flex items-start gap-2">

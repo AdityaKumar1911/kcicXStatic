@@ -61,7 +61,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3  >Featured Programs</h3>
+            <h3 className={headerClass} text-center >Featured Programs</h3>
             <ul className="grid grid-cols-2 gap-2">
               <li><Link href="/programs/beng-hons-motorsport-engineering" className={linkClass}>Motorsport</Link></li>
               <li><Link href="/programs/beng-hons-artificial-intelligence-with-placement" className={linkClass}>AI</Link></li>

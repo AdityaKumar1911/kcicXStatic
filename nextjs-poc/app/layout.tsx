@@ -34,9 +34,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {/* Skip to main content for accessibility */}
-        <a href="#main-content" className="skip-to-main sr-only focus:not-sr-only">
+        {/* <a href="#main-content" className="skip-to-main sr-only focus:not-sr-only">
           Skip to main content
-        </a>
+        </a> */}
         
         {children}
         

@@ -8,7 +8,8 @@ import CEOSection from './CEOSection';
 import ProgramsSection from './ProgramsSection';
 import SignatureProgramsSection from './SignatureProgramsSection';
 import PartnerUniversities from './PartnerUniversities';
-import { CurriculumCollaborationSection } from './CurriculumCollaborationSection';
+
+import CurriculumCollaborationSection from './CurriculumCollaborationSection';
 import TestimonialsSection from './TestimonialsSection';
 import FAQSection from './FAQSection';
 import Footer from './Footer';
@@ -20,9 +21,9 @@ import MobileParallaxSection from './MobileParallaxSection';
 export default function AppLayout() {
   return (
     <div className="min-h-screen">
-      <a href="#main-content" className="skip-to-main">
+      {/* <a href="#main-content" className="skip-to-main">
         Skip to main content
-      </a>
+      </a> */}
       
       <Navigation />
       
